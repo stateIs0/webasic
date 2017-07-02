@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>相对定位</title>
+	<style>
+		body{
+			background-color:#066;
+		}
+		ul{
+			width:780px;
+			border:0 solid #F00;
+			margin:20px auto;
+			/*去掉前面的符号*/
+			list-style-type:none;
+		
+		}
+
+		li {
+			border:1px solid #CCC;
+			padding:10px;
+			margin:10px;
+			float:left;
+			background-color:#FFF;
+		}
+		p{
+			text-align:center;
+		}
+		/*使用相对定位实现抖动的效果.
+			当鼠标悬停在li上方时,让它向右上方偏移2px*/
+			
+		li:hover {
+			/*告诉浏览器 进行相对定位.*/
+			position: relative;
+			left:2px;
+			bottom:2px;			
+		
+		}
+		
+	
+	</style>
+
+
+
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="../images/01.jpg"/>
+			<p>冬天的季节,教室里格外的冷,</p>
+		</li>
+		<li>
+			<img src="../images/02.jpg"/>
+			<p>撸起来是那么的不舒服,</p>
+		</li>
+		<li>
+			<img src="../images/03.jpg"/>
+			<p>大刀早已饥渴难耐,</p>
+		</li>
+		<li>
+			<img src="../images/04.jpg"/>
+			<p>麒麟臂早已练成,</p>
+		</li>
+		<li>
+			<img src="../images/05.jpg"/>
+			<p>但同桌的无影手更上一层楼,</p>
+		</li>
+		<li>
+			<img src="../images/06.jpg"/>
+			<p>何时麒麟臂能打败无影手!</p>
+		</li>
+	
+	
+	</ul>	
+
+
+
+
+
+
+
+
+
+</body>
+</html>

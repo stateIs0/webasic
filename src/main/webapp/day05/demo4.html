@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script >
+			//[0,1]->[0,100]->[0-99]
+			//在body加载前就生成随机数字.
+			var ran=parseInt(Math.random()*100);
+			console.log(ran);
+			function guess(){
+				//在页面加载完用户点击按钮时调用此函数,
+				//此时随机数早已生成完毕,可以使用了.
+				//1.获取文本框里的值.
+				var n=document.getElementById("num").value;
+				//获取span
+					var span=document.getElementById("result");
+				//判断该值是否是数字.
+				if(isNaN(n)){
+					//不是数字给予提示
+					span.innerHTML="输入有误";
+				}else{
+					//是数字继续猜大小.
+					if(n>ran){
+						span.innerHTML="大老粗              ";
+					}else if(n<ran){
+						span.innerHTML="金针姑";
+					}else{
+						span.innerHTML="黑人叼";
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="text" id="num"/>
+		<input type="button" value="猜"  onclick="guess();"/>
+		<h1  style="font-size:320px;"id="result"></h1>
+	</body>
+</html>

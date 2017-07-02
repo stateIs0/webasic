@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片计时器</title>
+			<style type="text/css">
+				#slide img{
+				/*浏览器逐行执行.先执行内部样式.*/
+					display:none;
+				}
+				
+			
+			
+			</style>
+	</head>
+	<body>
+		<h1>图片轮播</h1>
+		<div  id="slide">
+			<img  id="i1" src="../images/01.jpg" >
+			<img  src="../images/02.jpg">
+			<img  src="../images/03.jpg">
+			<img  src="../images/04.jpg">
+		</div>
+	
+		
+	</body>
+		<script>
+				//dispaly:更改元素的显示方式.块或行内块或行内元素.
+				var div=document.getElementById("slide");
+				
+				//getElementsByTagName() 方法可返回带有指定标签名的对象的集合。
+				var ary=div.getElementsByTagName("img");
+				var index=0;
+				setInterval(function(){
+					for(var i=0;i<ary.length;i++){
+					//	ary[i].style.display="none";
+						ary[i].removeAttribute("style");
+					//	ary[i].style.display="none";
+						}
+				
+						ary[index++%ary.length].style.display="block";
+				//移除此列表中指定位置上的元素。向左移动所有后续元素（将其索引减 1）		
+					
+				}, 1000)
+				
+				
+		
+		</script>
+		
+</html>

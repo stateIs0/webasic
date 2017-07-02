@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			.alert{
+				color:green;
+				border:1px solid #DDD;
+				 box-shadow:3px 3px 100px 100px #F00;
+				 font-size:5px;
+			}
+		</style>
+		<script type="text/javascript">
+			//此案例展示两种改变样式的api.
+			//此为内部样式/
+			function style1(){
+				var a=document.getElementById("div1");
+				a.className="alert";
+			}
+			function style2(){
+				var a=document.getElementById("div2");
+				//改变元素的内联样式.内联样式的优先级最高.
+				a.style.color="red";
+				a.style.border="1px solid #DDD";
+				a.style.borderRadius="4px";
+				a.style.boxShadow="3px 3px 10px  #F00";
+			}
+		</script>
+		
+	</head>
+	<body>
+		<h1>样式效果显示</h1>
+		<input type="button" value="那个" onclick="style1()">
+		<input type="button" value="飞机" onclick="style2()">
+		<div id="div1">我想那个</div>
+		<div id="div2">我想飞机.</div>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function test(e){
+				console.log('test(111)'+e);
+				//阻止事件的传播
+				if(e.stopPropagation){
+					//非ie使用.打住冒泡传递.
+					e.stopPropagation();
+				}else{
+					//ie使用
+					e.cancelBubble=true;
+				}
+			}
+		
+		</script>
+		<!-- 练习jc绑定. -->
+	</head>
+	<body>
+		<h1 >事件冒泡</h1>
+		<div onclick="console.log('divvvv')">
+			div元素.
+			<p >
+			p元素.
+				<input type="button" value="冒泡" id="mm" >
+			
+			</p>
+		
+		</div>
+		
+		
+		<div onclick="console.log(event)">
+			div元素.
+			<p onclick="test(event)">
+			p元素.
+				<input type="button" value="冒泡" id="mm" onclick="console.log(event)">
+			
+			</p>
+		
+		</div>
+	</body>
+</html>

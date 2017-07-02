@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+			<script type="text/javascript">
+				function test(){
+					//按照ID查询
+					var ul=document.getElementById("hello");
+					var div=ul.parentNode;
+					console.log('parentNode:'+div);
+					var childen=ul.childNodes;//含有文本和元素信息.chrome:children元素.只能得到元素,得不到空白文档.
+					console.log("childNodes:"+childen);
+					//根据标签名字得到元素.
+					var elements=ul.getElementsByTagName("li")//只得到元素,工作中常用.
+					console.log("elements:"+elements);
+					//遍历子节点
+					console.log(elements);
+					for(var i=0;i<childen.length;i++){
+						var node=childen[i];//文本或者元素.
+						if(node.nodeType==1){//元素
+							console.log(22222);
+							console.log(node);
+						}else{
+							console.log(1111111);
+							console.log(childen);
+						}
+					}
+				}
+			//所有的api遵守xml dom标准.
+			
+			function checkout(){
+				//找到
+				var car=document.getElementById("car");
+				//根据标签名字得到所有的元素,但是得到的太多.
+				var input=car.getElementsByTagName("input");
+				//获取name是items的元素.
+				var items=document.getElementsByName("item");
+				console.log(car);
+				console.log(input);
+				console.log(items);
+				//3种方法得到节点:1,根据id,2.根据标签名字,3.根据name.
+			}
+			
+			
+			</script>
+		
+	</head>
+	<body>
+		<h1>按照层次关系查询</h1>
+		<input type="button" value="测试" onclick="test();">
+		
+		<div>
+			<ul id="hello">
+				<li> <a href="#hello">你好</a>
+					<ol>
+						<li>日币
+							<ul>
+								<li>再日
+									<ul>
+										<li>
+											干死
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ol>
+				</li>
+				
+				
+				<li><a href="#hello">约吗</a></li>
+				<li><a href="#hello">牙买碟</a></li>
+				<li><a href="#hello">吃鸡吧</a></li>
+					
+			</ul>
+		
+		
+		</div>
+	
+		<div id="car">
+			<ul>
+				<li>
+					<input type="checkbox" name="item" value="1" >苹果
+				</li>
+				<li>
+					<input type="checkbox" name="item" value="1" >小米
+				</li>
+				<li>
+					<input type="checkbox" name="item" value="1" >三星
+				</li>
+				<li>
+					<input type="checkbox" name="item" value="1" >华为
+				</li>
+			</ul>
+			<input type="button" value="结账" onclick="checkout()">
+		</div>
+		
+	
+
+			
+	</body>
+</html>

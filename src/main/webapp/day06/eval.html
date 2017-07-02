@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function cleck(){
+				var input=document.getElementById("c");
+				var ss=input.value;
+				try{
+					var result=eval("("+ss+")");
+					input.value=result;
+				}catch(e){
+					input.value="Error";//记得加引号
+				}
+			}
+		
+		</script>
+		
+	</head>
+	<body>
+		<input type="text"  id="c"/>
+		<input type="button" value="=" onclick="cleck();"/><!--记得加括号和引号.记得是onclick,不是onblur  -->
+	
+		
+	</body>
+</html>

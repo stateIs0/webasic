@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			.ok{color:green;}
+			.error{color:red;}
+		</style>
+		<script>
+			//验证账号的格式
+			function checkCode(){
+				console.log(1);
+				//获取账号
+				var code=document.getElementById("code").value;
+				//验证账号格式.
+				var reg=/^\w{5,10}$/;
+				//获取span
+				var span=document.getElementById("code_msg");
+				if(reg.test(code)){
+					//对了,将提示信息变绿
+					span.className="ok";
+					return true;
+				}else{
+					//错了,将提示信息变红.
+					span.className="error";
+					return false;
+				}
+
+			}
+				//验证密码的格式.
+				function checkpwd(){
+					//获取密码
+					var pwd=document.getElementById("pwd").value;
+					//获取span
+					var spanpwd=document.getElementById("pwd_msg");
+					//正则表达式
+					var reg1=/^\w{10,20}$/;
+					//判断密码是否正确.
+					if(reg1.test(pwd)){
+						spanpwd.className="ok";//将span的样式进行改动.
+						return true;
+					}else{
+						spanpwd.className="error";
+						return false;
+					}
+				}
+			
+		
+		</script>
+				
+	</head>
+	<body>
+	<!-- 
+			1.写条件表达式时可以用任何值当条件.任何空值都等价于false.
+			2.return这个语句不是条件表达式,上面的规则不适用,想取消事件必须返回false,返回其他任何值都无法代替false. -->
+		<form action="http://tmooc.cn"  onsubmit="return checkCode() && checkpwd();"> 
+			<p>
+				账号:<input type="text" onblur="checkCode();" id="code"/>
+				<span id="code_msg">5-10位字母,数字,下划线</span>
+			</p>
+			<p>
+				密码:<input type="password"  onblur="checkpwd();"  id="pwd"/>
+				
+				<span id="pwd_msg">10-20位字母,数字,下划线</span>
+			</p>
+			<p>
+				<input type="submit"  value="登陆"/>
+			</p>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

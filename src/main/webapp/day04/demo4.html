@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>固定定位</title>
+	<style>
+		#d1{
+			width:50px;
+			line-height:30px;
+			background-color:#CCC;
+			text-align:center;
+		}
+	#d1 a{
+		/*超链接自带下划线,颜色,优先级还挺高.
+			直接在其父元素上加样式优先级比它低,
+			 所以必须在超链接上直接加这些样式才有效.*/
+			text-decoration:none;
+			
+		}
+		/*固定定位:将元素挂在窗口上,永远不动.*/
+		#d1{
+			position:fixed;
+			right:10px;
+			bottom:20px;
+		}
+		
+	</style>
+
+
+</head>
+<body>
+	<h1>学生妹</h1>
+	<p>价格合理 冰火 毒龙钻 69 倒挂金钩 </p>
+	<p>服务优质</p>
+	<p>技术一流 老树盘根</p>
+	<p>甜美笑容 放风筝 </p>
+	<p>性感少妇</p>
+	
+	<p>波大乳肥</p>
+	
+	<p>技术高超</p>
+	<p>退役空姐</p>
+	<p>性感丝袜</p>
+	
+	<p>价格合理</p>
+	<p>兼职护士</p>
+	
+	<p>制服诱惑</p>
+		<p>价格合理</p>
+	<p>服务优质</p>
+	<p>技术一流</p>
+	<p>甜美笑容</p>
+	<p>性感少妇</p>
+	
+	<p>波大乳肥</p>
+	
+	<p>技术高超</p>
+	<p>退役空姐</p>
+	<p>性感丝袜</p>
+	
+	<p>价格合理</p>
+	<p>兼职护士</p>
+	
+	<p>制服诱惑</p>
+	
+	<div id="d1">
+	<a href="#">顶部</a>
+	</div>
+
+
+
+
+</body>
+</html>

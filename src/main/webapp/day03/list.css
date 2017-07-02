@@ -1,0 +1,337 @@
+/*前期设置*/
+
+/* * 号代表所有的,去掉所有的边距.*/
+* {
+		padding: 0;
+		margin: 0;
+
+}
+
+/*1.页面分区并设置每个区域的尺寸.*/
+div {
+	border : 1px solid #F00;
+	margin: 0 auto;
+
+}
+ 
+.logo {
+	width:960px;
+	height:61px;
+	
+}
+
+.menu {
+	
+		height:91px;`
+	
+}
+
+.core {
+	
+	height: 410px;
+	/*预留的渐变区域.*/
+	padding-top:10px;
+	
+	
+}
+.copy {
+	width:960px;
+	height:50px;
+	
+}
+/*类选择器*/
+.content {
+	width:950px;
+	height:390px;
+	border: 5px solid #8ac1db;
+	
+}
+ /*派生选择器*/
+ .content div {
+ 	width:910px;
+ 	height:40px;
+ 	
+ }
+ .content .data {
+ 	height:310px;
+ }
+
+/*选择器的优先级:ID:100  元素选择器:1.  类选择器:10;越精确越高,否则越低
+	优先级高的覆盖低的.       背景色,前景色,背景图background-image:url('../images/background.png')*/
+	
+/*2.给页面上色:设置背景色和背景图.*/
+	body {
+			background-color:#0EA8D8;
+	}
+	.logo {
+			background-image:url(../img/top_bg.png);
+		
+	}
+	.menu {
+		background-color:#0488BB;
+	
+	}
+	.core {
+		/*图片  水平平铺  居顶*/
+		background:url(../img/content_bg.png)  repeat-x top;
+		
+	}
+	.content {
+			background-color:#e8f3f8;
+	}
+
+	/*3.设置文本样式*/
+	
+	body {
+		/*设置字体*/
+		font-family:"微软雅黑","文泉驿正黑","黑体";
+		/*设置字号*/
+		font-size:14px;
+		
+	}
+
+	.logo {
+		/*内容居右*/
+		text-align:right;
+		line-height:61px;
+	}
+
+	.logo a{
+		/*为a元素设置外边距.*/
+		color:#FFF;/*设置为白色*/
+		margin-right:40px;
+		/*去掉下划线.*/
+		text-decoration:none;
+		
+	}
+	.logo a:hover {
+		/*加粗*/
+		font-weight:bold;
+	}
+	
+	.copy {
+			text-align: center;
+			color:#FFF;
+			line-height:25px;
+	}
+
+/*4.	设置表格样式*/
+	.data table {
+		width: 100%;
+		border: 1px solid  #ccc;
+		/*边框合并时表格独有的声明,必须写在table上.*/
+		border-collapse: 	collapse;
+		
+		}
+
+	.data td {
+		border: 1px solid #ccc;
+		text-align:center;
+	}
+
+	.data thead tr {
+		background-color:#fbedce;
+		height: 40px;
+		font-weight:bold;
+	}
+	
+	.data tbody tr {
+		background-color:#fff;
+		height: 32px;
+	}
+	
+	.data tbody tr:hover {
+		background-color:#f7f9fd;
+	
+	}
+
+	.update {
+	/*设置按钮的样式*/
+		padding-left:15px;
+		background:url(../img/modification.png) no-repeat left;
+		border:0;
+	}
+
+	.delete {
+		padding-left:13px;
+		background:url(../img/delete.png) no-repeat left;
+		border:0;
+	}
+
+	.data input:hover {
+		/*鼠标变手型*/
+		cursor:pointer;
+	
+	}
+
+/*5.定位logo和消息提示框*/
+.logo img{
+		float: left;
+}
+/*在父元素上加position',便于子元素参照做绝对定位,*/
+.content {
+	position:relative;
+	
+}
+
+.content .msg{
+		position:absolute;
+		left:250px;
+		top:150px;
+		width:500px;
+		height:80px;
+
+	
+}
+.content .msg img{
+	float:right;			
+	margin:5px;
+}
+
+.msg img:hover {
+	cursor:pointer;
+}
+
+.msg p{
+	margin-left:38px;
+	line-height:80px;
+	
+}
+
+.content .msg{
+	border:1px solid #F68a8a;
+	background:#fdecec url(../img/ok.png) no-repeat 10px 32px;
+	
+}
+
+/*6.出来菜单区图片的摆放与切换.*/
+	.menu ul{
+		width:960px;
+		height:91px;
+		margin:0 auto;
+		border:1px solid yellow;
+		/*去除表格标记.*/
+		list-style-type:none;
+	}
+	
+	.menu li{
+		width:68px;
+		height:77px;
+		margin:7px 14px;
+		border:0px solid red;	
+		float:left;
+	}
+	.menu li:hover{
+		cursor:pointer;
+	}
+	
+	.index {
+		background-image:url(../img/index_out.png);
+	}
+	.index:hover{
+		background-image:url(../img/index_on.png);
+	}
+
+	.role {
+		background-image:url(../img/role_out.png);
+	}
+	.role:hover{
+		background-image:url(../img/role_on.png);
+	}
+	
+	.account {
+		background-image:url(../img/account_out.png);
+	}
+	.account:hover{
+		background-image:url(../img/account_on.png);
+	}
+	
+	.admin {
+		background-image:url(../img/admin_out.png);
+	}
+	.admin:hover{
+		background-image:url(../img/admin_on.png);
+	}
+	
+	.bill {
+		background-image:url(../img/bill_out.png);
+	}
+	.bill:hover{
+		background-image:url(../img/bill_on.png);
+	}
+	
+	.fee {
+		background-image:url(../img/fee_out.png);
+	}
+	.fee:hover{
+		background-image:url(../img/fee_on.png);
+	}
+	
+	.information {
+		background-image:url(../img/information_out.png);
+	}
+	.information:hover{
+		background-image:url(../img/information_on.png);
+	}
+	
+	.password {
+		background-image:url(../img/password_out.png);
+	}
+	.password:hover{
+		background-image:url(../img/password_on.png);
+	}
+	
+	.report {
+		background-image:url(../img/report_out.png);
+	}
+	.report:hover{
+		background-image:url(../img/report_on.png);
+	}
+	
+	.service {
+		background-image:url(../img/service_out.png);
+	}
+	.service:hover{
+		background-image:url(../img/service_on.png);
+	}
+	
+	
+	
+	
+	
+	
+	/*收尾:去掉开发过程中用于调试的边框.*/
+	.menu ul, .menu li, div{
+		border:0;
+	}
+
+	.content {
+		position:relative;
+	}
+	.page {
+		position:absolute;
+		left:280px;
+		bottom:40px;
+	}
+	
+	.page a{
+		padding:10px 10px;
+		font-size:15px;
+		font-size:"黑体";
+		font-weight:bold;
+		text-decoration: none;
+	}
+	
+	.page a:hover{
+		background-color:#CCC;
+	}
+
+
+
+
+
+
+
+
+
+

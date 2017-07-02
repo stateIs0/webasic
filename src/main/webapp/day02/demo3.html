@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/*1.继承性:子元素可以继承父元素的样式.
+	字体.颜色可以继承.其他一般不可以继承.*/
+	body {
+		font-family:"微软雅黑","文泉驿正黑","黑体";	
+	}
+/*2.层叠性:先后给一个元素增加不同的声明时,
+	他们的效果会叠加在一起.*/
+	h1 {
+		color:red;
+		color:green;
+	}
+	/*.....*/
+	h1 {
+		font-size:50px;
+	}
+	/*3.优先级:先后多次给1个元素增加相同的声明
+		效果以后者为准(就近原则.)*/
+	h2 {
+		color:green;
+	}
+	/*.......*/
+	h2 {
+		color:yellow;
+		font-family:"黑体";
+	}
+</style>
+</head>
+<body>
+	
+	<h1>苍老师</h1>
+	<h2>范传奇</h2>
+</body>
+</html>

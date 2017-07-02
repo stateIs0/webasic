@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			h1{
+				text-align:center;
+			}
+			table {
+				margin:0 auto;
+				width:60%;
+				border:2px solid #aaa;
+				border-collapse:collapse;
+				
+			}
+			table th, table td{
+				border:2px solid #aaa;
+				padding:5px;
+			}
+			th{
+				background-color:#eee;
+			}
+			 input{
+				align:"center";
+			}
+		
+		</style>
+		<script>
+    	//实现功能.首先.add_shoppingcart(btn)实现添加购物车的功能,读取到td中的数据,将数据按照下方表格的格式innerHTML到表格中,
+    	//第二:实现 total()计算商品总价,将下方所有的单价表格遍历,然后取到所有额值,将这些值相加,写入到下方的总价表格中
+    	//第三:changeNum(btn,n)让方表格中实现相加和相减的效果.并调用total方法更新数据.
+    	//第四:实现按钮删除的效果,点击x将那一行表格删除.并调用total方法更新数据.
+			function add_shoppingcart(btn){
+    			var tds=btn.parentNode.parentNode.getElementsByTagName("td");
+    			var name=tds[0].innerHTML;
+    			//得到购物车的tbody
+    			var tbody=$("goods");
+    			//得到其中所有的tr
+    			var trs=tbody.getElementsByTagName("tr");
+    			//遍历所有的tr
+    			for(var i=0;i<trs.length;i++){
+    				var tr=trs[i];
+    				//得到所有的td
+    				var tdss=tr.getElementsByTagName("td");
+    				//判断td中的第一个元素是否和上面的name相同.
+    				if(name==tdss[0].innerHTML){
+    					//得到td中第一个元素的父元素的input标签中的第二个input.
+    					var input=tdss[0].parentNode.getElementsByTagName('input')[1];
+    					//得到input text框中的值.
+    	    			var num=parseInt(input.value);
+    					//值加1.
+    	    			num++;
+    					//将值写入到input中.
+    	    			input.value=num;
+    					//更新数据页面.
+    	    			total();
+    	    			return;
+    				}
+    			}
+    			
+    			
+    			var price=tds[1].innerHTML;
+    			var tr=document.createElement("tr");
+    			tr.innerHTML=	'<td>'+name+'</td>'+
+										'<td>'+price+'</td>'+
+										'<td align="center">'+
+											'<input type="button" value="-" onclick="changeNum(this,-1)">'+
+											'<input type="text" value="1" size="3" readonly >'+
+											'<input type="button" value="+" onclick="changeNum(this,1)">'+
+										'</td>'+
+										'<td></td>'+
+										'<td align="center">'+
+											'<input type="button" value="x" onclick="removeItem(this)">'+
+										'</td>';
+				var tbody=document.getElementById("goods");
+				tbody.appendChild(tr); 
+				total();
+    		}
+    		function $(id){
+    			return document.getElementById(id);
+    		}
+    		//第二:实现 total()计算商品总价,将下方所有的单价表格遍历,然后取到所有值,将这些值相加,写入到下方的总价表格中
+    		function total(){
+    			var tbody=$("goods");
+    			var trs=tbody.getElementsByTagName("tr");
+    			var sum=0;
+    			for(var i=0;i<trs.length;i++){
+    				//获取每一个tr
+    				var tr=trs[i];
+    				//获取每个tr的td集合
+    				var tds=tr.getElementsByTagName("td");
+    				//获取td中的元素.
+    				var price=parseInt(tds[1].innerHTML);
+    				var num=parseInt(tds[2].getElementsByTagName("input")[1].value);
+    				money=price*num;
+    				tds[3].innerHTML=money.toFixed(2);
+    				
+    				sum+=money;
+    				
+    			}
+    			var total=$("total");
+    			total.innerHTML=sum.toFixed(2);
+    		}
+    		//第三:changeNum(btn,n)让方表格中实现相加和相减的效果.并调用total方法更新数据.
+    		function changeNum(btn,n){
+    			var input=btn.parentNode.getElementsByTagName('input')[1];
+    			var num=parseInt(input.value);
+    			num+=n;
+    			if(num<=0){
+    				return;
+    			}
+    			input.value=num;
+    			total();
+    			
+    		}
+    		//第四:实现按钮删除的效果,点击x将那一行表格删除.并调用total方法更新数据.
+    		function removeItem(btn){
+    			var tr=btn.parentNode.parentNode;
+    			var tbody=$("goods");
+    			if(confirm("确定?")){
+    				tbody.removeChild(tr);
+    			}else{
+    				return;
+    			}
+    		}
+    		
+    		
+		
+		</script>
+	</head>
+	<body>
+		<h1>秒选EZ</h1>
+		<table>
+			<tr>
+				<th>商品</th>
+				<th>单价(元)</th>
+				<th>颜色</th>
+				<th>库存</th>
+				<th>好评率</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td>冰拳</td>
+				<td>80</td>
+				<td>黑色</td>
+				<td>1600</td>
+				<td>88%</td>
+				<td align="center">
+					<input type="button" value="加入购物车"  onclick="add_shoppingcart(this)">
+				</td>
+			</tr>
+			<tr>
+				<td>破败</td>
+				<td>150</td>
+				<td>红色</td>
+				<td>3300</td>
+				<td>87%</td>
+				<td align="center">
+					<input type="button" value="加入购物车" onclick="add_shoppingcart(this)">
+			</td>
+			<tr>
+				
+				<td>魔切</td>
+				<td>380</td>
+				<td>黄色</td>
+				<td>3200</td>
+				<td>78%</td>
+				<td align="center">
+					<input type="button" value="加入购物车"  onclick="add_shoppingcart(this)">
+				</td>
+			</tr>
+			<tr>
+				<td>破甲弓</td>
+				<td>840</td>
+				<td>白色</td>
+				<td>2000</td>
+				<td>99%</td>
+				<td align="center">
+					<input type="button" value="加入购物车" onclick="add_shoppingcart(this)" >
+				</td>
+			</tr>
+			<tr>
+				<td>蓝EZ</td>
+				<td>490</td>
+				<td>透明色</td>
+				<td>100000</td>
+				<td>90%</td>
+				<td align="center">
+					<input type="button" value="加入购物车" onclick="add_shoppingcart(this)">
+			</td>
+			</tr>
+		
+		</table>
+		<h1>武器库</h1>
+		<table>
+			<thead>
+				<tr>
+					<th>商品</th>
+					<th>单价(元)</th>
+					<th>数量</th>
+					<th>金额(元)</th>
+					<th>删除</th>
+				</tr>
+			</thead>
+			<tbody id="goods">
+				<!--<tr>
+					<td>金士顿U盘</td>
+					<td>80</td>
+					<td align="center">
+						<input type="button" value="-" >
+						<input type="text" value="1" size="3" readonly >
+						<input type="button" value="+" >
+					</td>
+					<td></td>
+					<td align="center">
+						<input type="button" value="x" >
+					</td>
+				</tr>  -->
+			</tbody>		
+			<tfoot>
+				<tr>
+					<td colspan="3" align="right">总计</td>
+					<td id="total"></td>
+					<td></td>
+				</tr>
+			</tfoot>
+		
+		</table>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			.ok{color:green;}
+			.error{color:red;}
+		</style>
+		<script>
+			function checkCode(){
+				var input=document.getElementById("code");
+				var code=input.value;
+				var span=document.getElementById("code_msg");
+				var reg=/^\w{5,10}$/;
+				if(reg.test(code)){
+					span.className="ok";
+					return true;
+				}else{
+					span.className="error";
+					return false;
+				}
+			}
+			function checkPwd(){
+				var pwd1=document.getElementById("pwd").value;
+				var span=document.getElementById("pwd_msg");
+				var reg=/^\w{8,20}$/;
+				if(reg.test(pwd1)){
+					span.className="ok";
+					return true;
+				}else{
+					span.className="error";
+					console.log(1);
+					return false;
+				}
+			}
+			function checkcheck(){
+				var pwd=document.getElementById("pwd").value;
+				var check=document.getElementById("check").value;
+				var span=document.getElementById("check_msg");
+				if(pwd==check){
+					span.className="ok";					
+					return true;
+				}else{
+					span.className="error";
+					return false;
+				}
+				
+			}
+		
+		</script>
+	</head>
+	<body>
+		<form action="http://www.tmooc.cn" onsubmit="return checkCode()+checkPwd()+checkcheck()==3">
+			<p>
+				<input type="text" onblur="checkCode();" id="code" />
+				<span id="code_msg">账号满足5-10位字母、数字、下划线的组合</span>
+			</p>
+			<p>
+				<input type="text"  onblur="checkPwd();" id="pwd"/>
+				<span id="pwd_msg">密码满足8-20位字母、数字、下划线的组合</span>
+			</p>
+			<p>
+				<input type="text"  onblur="checkcheck();" id="check"/>
+				<span id="check_msg">请验证密码.要求跟密码一致. </span>
+			</p>
+			<p>
+				<input type="submit" value="验证"/>
+			</p>
+		
+		</form>
+		
+	</body>
+</html>

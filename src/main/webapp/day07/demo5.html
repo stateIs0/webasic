@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<!--Dom是html在浏览器中加载的结果.  -->
+	<head>
+		<meta charset="UTF-8">
+		<title>Dom</title>
+		<script>
+			function testNode(){
+				var e=document.getElementById("msg");
+				var txt=e.childNodes[0];
+				console.log(txt);
+				//显示各种节点信息.
+				
+				console.log("document:"+document.nodeType
+										+","+document.nodeName);
+				//显示元素信息.常用.
+				console.log("element:"+e.nodeType+
+										","+e.nodeName);
+				console.log("text:"+txt.nodeType+
+										","+txt.nodeName);
+			}
+			
+			function insertHTML(){
+				var div=document.getElementById("demo");
+				var list='<ul>'+'<li>Tom</li>'+'<li>Jerry</li>'+'<ul>';
+				div.innerHTML=list;
+			}
+			//text和html对转义字符的区别.
+			function insertText(){
+				var div=document.getElementById("demo");
+				div.innerText="<b>您好!</b>	";
+			}
+			
+			function changeAttribute(){
+				var a=document.getElementById("doc");
+				var title=a.getAttribute("title");
+				console.log("当前:"+title);
+				a.setAttribute("title","TMOOC");
+				a.setAttribute("age","88");
+				var age=a.getAttribute("age");
+
+				console.log(age);
+				a.setAttribute("href","http://tmooc.cn");
+				a.innerHTML="tmooc";
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 onclick="testNode()">Dom</h1>	
+		<p id="msg">hello
+		</p>
+		
+		<div id="demo"></div>
+		<input type="button" value="html" onclick="insertHTML()">
+		<input type="button" value="text" onclick="insertText()">
+				
+		<p>
+			<input type="button" value="title" onclick="changeAttribute()"/>
+			<a href="http://doc.tedu.cn"  id="doc" title="文档资源 ">文档</a>
+		</p>		
+				
+				
+	</body>
+</html>

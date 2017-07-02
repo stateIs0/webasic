@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function test(){
+				//根据id得到父元素
+				var ul=document.getElementById("demo");
+				//创建游离元素
+				var li=document.createElement("li");
+				//在新的游离元素中写入文本
+				li.innerHTML="天海翼";
+				//根据父元素下的li标签集合中的第一个元素.
+				var tom=ul.getElementsByTagName("li")[0];
+				//将新元素插入到第一个元素的前面.
+				ul.insertBefore(li, tom);
+				
+			}
+			//追加新元素
+			function test2(){
+			var li=document.createElement("li");
+			li.innerHTML="andy";
+			var ul=document.getElementById("demo");
+			//此处直接添加到最后
+			ul.appendChild(li);
+			//插入新元素.
+			li=document.createElement("li");
+			li.innerHTML="mac";
+			var tom=ul.getElementsByTagName("li")[0];
+			//此处可以灵活添加.
+			ul.insertBefore(li, tom);
+			}
+		
+			
+			function removeLi(){
+				var ul=$('demo');		
+				var li=ul.getElementsByTagName("li")[0];
+				//删除元素
+				ul.removeChild(li);//是removeChild不是remove.
+				//得到新的id父元素
+				var list=$("list");
+				//将上面删除过的元素添加到新的父元素下.
+				list.appendChild(li);
+				
+				
+			}
+			function $(id){
+				return document.getElementById(id);
+			}
+			
+		</script>
+		
+	</head>
+	<body>
+			<h1>添加元素</h1>	
+			<input type="button" value="测试" onclick="test()">
+			<input type="button" value="测试2" onclick="test2()">
+			<ul id="demo">
+				<li>tom</li>
+				<li>jerry</li>
+			</ul>
+			<p>删除列表</p>
+			<input type="button" value="删除" onclick="removeLi()">
+			<ul id="list">
+					
+			
+			</ul>
+			
+	</body>
+</html>

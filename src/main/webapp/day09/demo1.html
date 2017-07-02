@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script type="text/javascript">
+		//为了和html彻底解耦.
+		//绑定网页加载以后执行的事件
+		//onload 事件会在页面或图像加载完成后立即发生。
+		window.onload=inio;//注意:inio是方法的引用变量
+		function inio(){
+		var btn=document.getElementById('btn');
+		//为按钮绑定鼠标单击事件
+		btn.onclick=function(){
+			//this引用调用方法的当前对象
+			//this.value访问当前按钮的value属性.
+			console.log('hello,'+this.value);			
+		}
+		var doc=document.getElementById("doc");
+		doc.onclick=function (){
+			console.log('hello--'+this.value)	;
+			//事件方法返回false时候,取消执行后续动作,如:取消网页跳转,表单提交等.
+		
+			return false;
+		}
+	
+		}
+		</script>
+	</head>
+	<body >
+		<h1>事件绑定</h1>
+		<input type="button" value="test"  id="btn">
+		<a href="http://doc.tedu.cn" id="doc"> DOC</a>
+		
+	</body>
+</html>

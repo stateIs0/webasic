@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+			<script type="text/javascript">
+				function func(e){
+					console.log();
+					var obj=e.target||event.srcElement;
+					console.log(obj+'obj');
+				}
+				//此处在网页加载以后执行,防止在网页未执行时得到null值.
+				//
+				window.onload=function(Element){
+					var demo=document.getElementById("demo");
+					//将元素绑定onclick.
+					demo.onclick=function(){
+						console.log(Element.style+","+Element.target);
+						//在ie中不能使用.
+					
+					}
+				};
+			</script>
+	</head>
+	<body>
+		<h1>event 对象</h1>	
+		<div onclick="func(this);">Hello!</div>
+		
+		
+		<div id="demo">Demo Div!</div>
+		
+	
+	</body>
+</html>

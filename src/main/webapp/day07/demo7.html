@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			#slide img{
+				display:none;
+			}
+		
+		</style>
+		
+		
+	</head>
+	<body>
+		<h1>图片轮播</h1>	
+		<div id ="slide">
+			<img alt="" src="../images/01.jpg" style="display:block">
+			<img alt="" src="../images/02.jpg" >
+			<img alt="" src="../images/03.jpg" >
+			<img alt="" src="../images/04.jpg" >
+			
+		</div>
+	</body>
+	<script>
+		var div=document.getElementById("slide");
+		//得到名字为img元素所有的图片数组
+		var ary=div.getElementsByTagName("img");
+		
+		var index=0;
+		
+		setInterval(function(){
+			for(var i=0;i<ary.length;i++){
+				ary[i].style.display="none";
+		//	ary[i].removeAttribute("style");
+				
+			}
+			ary[index++%ary.length].style.display="block";
+			
+		}, 1000)
+	
+	
+	</script>
+	
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>一次性定时器</title>
+		
+			<style>
+				.show{display:block;
+						  color:red;
+						  width:200px;
+						  padding:5px;
+						  margin:50px auto;
+						  background-color:#CCC;
+						  text-align: center;
+						  border-radius:5px;/*圆角*/
+						  box-shadow:3px 3px 5px  #ccc;}/*阴影*/
+				.hide{display:none}
+			</style>
+			<script>
+				function showInfo(){
+					var n=document.getElementById("info");
+					n.className="hide";
+					window.setTimeout(function(){/*此处的window可要可不要.不写默认也是有的.  */
+							var n=document.getElementById("info");
+							n.className="show";
+						},2000);
+					
+				}
+			
+			</script>
+			
+	</head>
+	<body>
+		<h1>一次性定时器</h1>
+		<input type="button" value="显示" onclick="showInfo()">
+		<div id="info">
+			今天单总请客
+		</div>
+	
+	
+	
+	
+	</body>
+</html>

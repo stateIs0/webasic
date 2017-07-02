@@ -1,0 +1,231 @@
+/*1.页面分区并设置每个区域的尺寸.*/
+
+*{
+	padding:0;
+	margin:0 auto;
+	
+}
+
+div {
+	border:1px solid red;
+	margin:0 auto;
+	
+}
+
+.logo {
+	width:960px;
+	height:61px;
+	
+}
+
+.menu {
+	width:100%;
+	height:91px;
+
+	
+}
+ 
+ .core {
+ 
+ 	height:410px;
+ 	padding-top:10px;
+ 
+ }
+ .content{
+ 	width:950px;
+ 	height:390px;
+ 	border:5px solid #8ac1db;
+ }
+ 
+ .content div{
+ 		width:910px;
+ 		height:40px;
+ 		
+ 	}
+ .content .data{
+ 	width:910px;
+ 	height:310px;
+ }
+ 
+ 
+ 
+ 
+ .copy {
+ 	width:960px;
+ 	height:50px;
+ }
+
+.copy p{
+		text-align:center;
+		line-height:25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*使用背景色和背景图给网页上色*/
+body{
+	background-color:#0EA8D8;
+}
+
+.logo{
+	background-image:url(../img/top_bg.png);
+}
+
+	.menu {
+		background-color:#0488BB;
+	
+	}
+
+	.core {
+		/*图片  水平平铺  居顶*/
+		background:url(../img/content_bg.png)  repeat-x top;
+		
+	}
+
+	.content {
+			background-color:#e8f3f8;
+	}
+
+
+/*设置logo区和版权区文本的格式*/
+	
+	.logo {
+		text-align:right;
+		line-height:61px;
+		padding-right:40px;
+	}
+	
+	.logo a{
+		text-decoration:none;
+		color:#fff;
+	}	
+	
+	.copy {
+		color:#fff;
+	}
+
+
+
+	body {
+		/*设置字体*/
+		font-family:"微软雅黑","文泉驿正黑","黑体";
+		/*设置字号*/
+		font-size:14px;
+		
+	}
+
+	.logo a:hover {
+		/*加粗*/
+		font-weight:bold;
+	}
+
+
+/*4设置数据区表格的样式*/
+
+	.data table {
+		/*将表格100%铺开,并设置边框为白色,并消除边框与边框的空隙*/
+		width: 100%;
+		border: 1px solid  #ccc;
+		/*边框合并时表格独有的声明,必须写在table上.*/
+		border-collapse: 	collapse;
+		
+		}
+
+
+
+.data td {
+	/*将所有的td加上边框并将文本居中.*/
+		border: 1px solid #ccc;
+		text-align:center;
+	}
+
+	.data thead tr {
+	/*将行分组的头部进行增高,比昂修改为淡黄色,并加粗字体.*/
+		background-color:#fbedce;
+		height: 40px;
+		font-weight:bold;
+	}
+
+
+	.data tbody tr {
+	/*将子表格颜色设置为白色,将高度设置为32个像素*/
+		background-color:#fff;
+		height: 32px;
+	}
+
+
+	.data tbody tr:hover {
+	/*设置将tr内的表格有悬停效果,颜色为#7f9fd*/
+		background-color:#f7f9fd;
+	
+	}
+
+.update {
+	/*设置按钮的样式,设置左边内边框,并插入图片,并不重复,在左边,并消除边框*/
+		padding-left:15px;
+		background:url(../img/modification.png) no-repeat left;
+		border:0;
+	}
+
+	.delete {
+		padding-left:13px;
+		background:url(../img/delete.png) no-repeat left;
+		border:0;
+	}
+
+	.data input:hover {
+		/*鼠标变手型*/
+		cursor:pointer;
+	
+	}
+
+
+	/*5.1采用浮动定位logo图片
+		2.采用绝对定位消息框*/
+
+
+.logo img{
+	float:left;
+}
+
+
+.content{
+	position:relative;
+}
+
+.content  .msg{
+		position:absolute;
+		left:250px;
+		top:150px;
+		width:500px;
+		height:80px;
+
+}
+
+.content .msg img{
+	float:right;
+	margin:10px 10px;
+	cursor:pointer;
+}
+
+.content .msg p{
+	margin-left:38px;
+	line-height:80px;
+}
+
+.content .msg {
+	background:#fdecec url(../img/ok.png) no-repeat 20px 33px;
+}
+
+
+
+
+

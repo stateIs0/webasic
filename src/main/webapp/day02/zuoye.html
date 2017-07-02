@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	
+		body{
+			font-family:"宋体","楷体";
+		}
+	
+	
+		.c1 {
+			color:red;
+		
+		}
+		
+		 #c1{
+		 	color:red;
+		}
+		
+		.c2 {
+		  color:green;
+		}
+		
+		.c3 {
+			color:blue;
+		
+		}
+		
+		#c4 {
+			color:yellow;
+		}
+		
+		
+		
+		a:hover {
+			color:red;
+		}
+	
+	</style>
+	
+	</head>
+	<body>
+		<!-- 用来声明提交数据的服务器地址 -->
+		<form action="http://tmooc.cn">
+	
+		<p id="c1">
+			账号:<input type="text" value="我是你大爷" maxlength="10" />
+		</p>
+		
+		<p>
+		性别:<input type="radio"  name="sex"  checked/>男
+				<input type="radio" name="sex"  />女
+		
+		</p>
+		
+		<p class="c2">
+		 	三国的英雄哪几个最牛逼:<input type="checkbox" checked/>曹操
+		 									<input type="checkbox" />关羽
+		 									<input type="checkbox" />张飞
+		 									<input type="checkbox" />吕布
+		 									<input type="checkbox" />赵云
+		 									<input type="checkbox" />夏侯
+		 									<input type="checkbox" />华雄
+		 									<input type="checkbox" />潘凤
+		 									<input type="checkbox" />颜良
+		 									<input type="checkbox" />文丑
+		 									
+		</p>
+		
+		<p class="c3">
+			三国英雄谁最牛逼:<select>
+							<option>曹操</option>
+							<option>刘备</option>
+							<option>孙权</option>
+							<option>诸葛亮</option>
+							<option>荀彧</option>
+							<option>郭嘉</option>
+							<option>周瑜</option>
+							<option>鲁肃</option>
+							<option>黄盖</option>
+							<option>许褚</option>
+							<option>夏侯</option>
+							<option>曹真</option>
+							<option>曹昂</option>
+	
+			</select>
+		
+		</p>
+		
+		<p id="c4">
+		
+		三国简介:<textarea rows="5"  cols="20 "  >话说天下大势,合久必分,分久必合</textarea>
+		</p>
+		
+		
+		<p>
+			<input type="submit"  value="注册"/>
+			<input  type="reset"  value="重置"/>
+			<input type="button" value="测试"/>
+		
+		
+		
+		</p>
+		
+		<ol>
+			<li >北京</li>
+			<li class="c1">上海</li>
+			<li class="c1">广州</li>
+			<li class="c1">深圳</li>
+		
+		</ol>
+		
+		<p id="b1"> <a href="http://tmooc.cn">达内</a></p>
+		
+		
+		
+		
+		</form>
+		
+		
+		
+		
+	</body>
+</html>

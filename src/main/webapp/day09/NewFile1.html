@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			window.onload=io;
+			function io(){
+				var btn=document.getElementById('tt');
+			btn.onclick=function(){	
+				console.log('hello'+this.value);
+			}
+			
+			var doc=document.getElementById("doc");
+			doc.onclick=function(){
+				console.log('hello'+this.value)	;
+				//事件方法返回false时候,取消执行后续动作,如:取消网页跳转,表单提交等.
+			
+				return false;
+			}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>事件绑定</h1>	
+		<input type="button" value="test"  id="tt">
+		<a href="http://doc.tedu.cn" id="doc"> DOC</a>
+	</body>
+</html>

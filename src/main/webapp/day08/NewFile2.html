@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			var cites=[['请选择'],
+				           ['苏州','南京','南通','徐州','昆山','花桥'],
+				           ['池州','合肥','宿州','芜湖','安庆','滁州'],
+				           ['静安','嘉定','浦东','浦西','宝山','虹桥']];
+			function change(bnt){
+				//首先得到传入的点击的坐标
+				var index=bnt.selectedIndex;
+				//然后得到对应的城市下标的集合.
+				var c=cites[index];
+				var select=document.getElementById("city");
+				select.innerHTML="";
+				for(var i=0;i<c.length;i++){
+					//遍历集合.将集合中的元素写入到城市下拉选中区
+					//创建游离元素
+					var op=document.createElement("option");
+					//将游离元素赋值
+					op.innerHTML=c[i];
+					//用父元素将游离元素追加.
+					select.appendChild(op);	
+					//value是发送到服务器的数据,
+					//不是给客户端使用的.
+					op.value=i;
+					
+					//思路:先知道下标,通过下标得到对应的数组.得到给定id的父元素,用for循环:创建游离元素
+					//并通过循环将集合里每一个元素添加进游离元素,并追加到父元素下.并事先清空上一次的元素
+					//.value将值传送到服务器.
+				}
+			}
+		
+		</script>
+	
+	
+	</head>
+	<body>
+			<h1>联动菜单</h1>
+				省份:
+			<select id="province" onchange="change(this)">
+				<option value="0">请选择</option>
+				<option value="1">江苏</opction>
+				<option value="2">安徽</option>
+				<option value="3">上海</option>
+			</select>
+				城市:
+			<select id="city">
+				<option>请选择</option>
+			</select>
+	</body>
+</html>

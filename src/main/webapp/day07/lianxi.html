@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+			<style>
+			.show{
+			display:block;
+			}
+			.hide{
+			display:none;}
+			</style>
+			<script type="text/javascript">
+				function show(){
+					var n=document.getElementById("info");
+/* 					n.className="show";
+ */					setTimeout(function(){
+						var n=document.getElementById("info");
+						n.className="hide";
+					},2000);
+					document.write('123');
+				}
+			
+			
+			</script>
+		
+		
+	</head>
+	<body>
+			<h1>一次性定时器
+			</h1>	
+			<div id="info">今天日了狗</div>
+			<input type="button" value="xianshi" onclick="show()">
+	</body>
+</html>

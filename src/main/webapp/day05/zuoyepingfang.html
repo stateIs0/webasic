@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+			function f(){
+				var n=document.getElementById("i1").value;
+				var span=document.getElementById("i2");
+				if(!isNaN(n)){
+					if(n<0){
+						span.innerHTML="不能小于0";
+					}else if(n>0){
+						span.innerHTML=n*n;
+					}else{
+						span.innerHTML=1;
+					}
+				}else{
+					span.innerHTML="请输入数字";
+				}
+			}
+			
+			function f1(){
+				var n=document.getElementById("i1").value;
+				var span=document.getElementById("i2");
+				if(!isNaN(n)){
+					if(n<0){
+						span.innerHTML="不能是负数";
+					}else if(n>0){
+						var i=1;
+						//此处可使用简写,因为0就是false.
+						for(var v=n;v;v--){
+							i=i*v;
+						}
+						span.innerHTML=i;
+					}else{
+						span.innerHTML=1;
+					}
+				}else{
+					span.innerHTML="必须为数字";
+				}
+				
+				
+				
+				
+			}
+		</script>
+			
+	</head>
+	<body>
+			<input type="text" id="i1"/>
+			<input type="button" value="计算" onclick="f1();"/>
+			=<span style="color:red;font-size:20px" id="i2"></span>
+			
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script>
+				function ss(){
+					var input=document.getElementById("c");
+					var s1=1;
+					if(arguments!=null && arguments.length>0){
+						for(var i=0;i<arguments.length;i++){
+							s1*=arguments[i];
+							
+						}
+					}
+					input.value=s1;
+				}
+				console.log(ss(5,8));
+				console.log(ss(7,8,9));
+				
+				
+				function ss(){
+					var input = document.getElementById("c");
+					var s1=1;
+					if(arguments!=null && arguments.length>0){
+						for(var i=0;i<arguments.length;i++){
+							s1*=arguments.length;
+						}
+						input.value=s1;
+					}
+					
+				}
+				console.log(ss(5,8));
+				console.log(ss(3,4));
+				
+				
+				
+				
+				
+		
+		</script>
+	</head>
+	<body>
+			<!--2.写一个求乘积的功能，要求
+		 只写一个方法,调用时可以传入任意多个数字
+		 求这些数字的乘积  -->
+		 
+		 <input type="text" id="c"/>
+		 <input type="button"  value="=" onclick="ss(4,5);" />
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+	</body>
+</html>
